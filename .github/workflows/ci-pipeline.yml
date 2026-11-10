@@ -3,8 +3,17 @@ name: Cubix DevOps CI Pipeline
 on:
   push:
     branches: [ "master" ]
+    # OPCIONÁLIS FELADAT: Csak akkor indul el, ha ezek a fájlok változnak
+    paths:
+      - 'Dockerfile'
+      - 'app.py'
+      - '.github/workflows/**'
   pull_request:
     branches: [ "master" ]
+    # OPCIONÁLIS FELADAT: Pull Request esetén is érvényesítjük a szűrést
+    paths:
+      - 'Dockerfile'
+      - 'app.py'
 
 jobs:
   build-and-test:
@@ -21,4 +30,3 @@ jobs:
     - name: Test Docker Container Run
       run: |
         docker run --rm cubix-homework-app:latest
-
