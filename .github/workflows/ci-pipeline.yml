@@ -2,9 +2,9 @@ name: Cubix DevOps CI Pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   build-and-test:
@@ -21,3 +21,4 @@ jobs:
     - name: Test Docker Container Run
       run: |
         docker run --rm cubix-homework-app:latest
+
