@@ -1,0 +1,1 @@
+print("App sikeresen elindult a konténerben!")
